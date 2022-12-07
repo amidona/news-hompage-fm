@@ -47,19 +47,32 @@ img {
     cursor: pointer;
 }
 
-/*****HEADER STYLES*****/
-.mobile {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 20px;
-    flex-wrap: nowrap;
+.open .body {
+    filter: brightness(50%);
 }
 
-.menu {
-    display: none;
-    flex-basis: 100%;
+/*****HEADER STYLES*****/
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+nav {
+    max-width: 0;
+    max-height: 0;
+    overflow: hidden;
+}
+
+.open nav {
+    max-width: 1000px;
+    max-height: 1000px;
     padding: 15px;
+    background-color: hsl(36, 100%, 99%);
+    position: fixed;
+    width: 60%;
+    height: 100%;
+    
 }
 
 nav figure {
@@ -86,6 +99,15 @@ nav ul li {
 nav a {
     color: hsl(236, 13%, 42%);
     text-decoration: none;
+}
+
+.mobile {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    flex-wrap: nowrap;
+    flex-grow: 1;
 }
 
 /****#POPULAR STYLES*/
