@@ -15,6 +15,11 @@ body {
     padding: 20px;
 }
 
+a {
+    text-decoration: none;
+    color: hsl(236, 13%, 42%);
+}
+
 h1 {
     color: hsl(240, 100%, 5%);
     font-size: 2.5em;
@@ -91,9 +96,8 @@ nav ul li {
     padding: 10px 0;
 }
 
-nav a {
-    color: hsl(236, 13%, 42%);
-    text-decoration: none;
+nav ul li a.hover {
+    color: hsl(35, 77%, 62%);
 }
 
 .mobile {
@@ -119,7 +123,11 @@ nav a {
     margin: 20px 0;
     padding: 15px 30px;
     text-transform: uppercase;
-    
+}
+
+#popular button.button-click {
+    background-color: hsl(240, 100%, 5%);
+    cursor: pointer;
 }
 
 /******#NEW STYLES*****/
@@ -141,6 +149,14 @@ nav a {
 
 #new h3 {
     padding-bottom: 10px;
+}
+
+#new a {
+    color: hsl(36, 100%, 99%);
+}
+
+#new a.hover {
+    color: hsl(35, 77%, 62%);
 }
 
 
@@ -183,6 +199,14 @@ nav a {
     line-height: 1.75em;
 }
 
+.trend-story a {
+    color: hsl(240, 100%, 5%);
+}
+
+.trend-story a.hover {
+    color: hsl(5, 85%, 63%);
+}
+
 /***** FOOTER STYLES ******/
 #attribution {
     font-size: 11px;
@@ -191,8 +215,10 @@ nav a {
 
 #attribution a {
     color: hsl(228, 45%, 44%);
+    text-decoration: underline;
 }
 
+/********************* DESTOP SYTLES ************************/
 @media (min-width: 1200px) {
     /******GLOBAL STYLES******/
     body {
@@ -205,6 +231,14 @@ nav a {
 
     h1 {
         font-size: 3.5em;
+    }
+
+    h2 {
+        font-size: 2.5em;
+    }
+
+    h3 {
+        font-size: 1.25em;
     }
 
     .content {
