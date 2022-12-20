@@ -1,23 +1,26 @@
 /******GLOBAL STYLES******/
-* { 
-    margin: 0; 
-    padding: 0; 
+* {
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    color: hsl(236, 13%, 42%);
     background-color: hsl(36, 100%, 99%);
+    color: hsl(236, 13%, 42%);
+    display: flex;
     font-family: 'Inter', sans-serif;
     font-size: 15px;
+    justify-content: center;
 }
 
 .wrapper {
+    max-width: 1500px;
     padding: 20px;
 }
 
 a {
-    text-decoration: none;
     color: hsl(236, 13%, 42%);
+    text-decoration: none;
 }
 
 h1 {
@@ -44,14 +47,6 @@ img {
     width: 100%;
 }
 
-.hide {
-    display: none;
-}
-
-.cursor {
-    cursor: pointer;
-}
-
 /*****HEADER STYLES*****/
 header {
     display: flex;
@@ -60,28 +55,32 @@ header {
 }
 
 nav {
-    max-width: 0;
-    max-height: 0;
-    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+    height: 100%;
+    justify-content: flex-end;
+    left: 0;
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;    
 }
 
-.open nav {
-    max-width: 1000px;
-    max-height: 1000px;
-    padding: 15px;
+#nav-content {
     background-color: hsl(36, 100%, 99%);
+    height: 100%;
+    padding: 15px;
     position: fixed;
     width: 60%;
-    height: 100%;
-    
 }
 
 nav figure {
-    width: 100%;
-    padding-bottom: 40px;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
+    padding-bottom: 40px;
+    width: 100%;
 }
 
 nav img {
@@ -103,10 +102,10 @@ nav ul li a.hover {
 .mobile {
     align-items: center;
     display: flex;
-    justify-content: space-between;
-    padding-bottom: 20px;
-    flex-wrap: nowrap;
     flex-grow: 1;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding-bottom: 20px;   
 }
 
 /****#POPULAR STYLES*******/
@@ -169,20 +168,16 @@ nav ul li a.hover {
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
-    /* border: 1px solid red; */
 }
 
 .trend-story figure {
-    width: 33.333%;
     padding: 15px 15px 15px 0;
-    overflow: hidden;
-    /* border: 1px solid orange; */
+    width: 33.333%;
 }
 
 .trend-story .text {
-    width: 66.666%;
     padding: 15px 0 15px 15px;
-    /* border: 1px solid blue; */
+    width: 66.666%;
 }
 
 .trend-story h2 {
@@ -220,11 +215,12 @@ nav ul li a.hover {
 
 /********************* DESTOP SYTLES ************************/
 @media (min-width: 1200px) {
+
     /******GLOBAL STYLES******/
     body {
         font-size: 18px;
     }
-    
+
     .wrapper {
         padding: 100px;
     }
@@ -251,22 +247,27 @@ nav ul li a.hover {
     header {
         margin-bottom: 50px;
     }
-    
+
     .mobile {
         order: 1;
         padding: 0;
     }
-    
+
     .mobile .open {
         display: none;
     }
 
     nav {
-        max-width: 1000px;
-        max-height: 1000px;
+        display: flex;
         order: 2;
-        width: 40%;
-        /* border: 1px solid red; */
+        position: relative;
+        width: 45%;
+    }
+
+    #nav-content {
+        display: flex;
+        flex-grow: 1;
+        position: relative;
     }
 
     nav figure {
@@ -275,6 +276,7 @@ nav ul li a.hover {
 
     nav ul {
         display: flex;
+        flex-grow: 1;
         flex-wrap: nowrap;
         justify-content: space-between;
     }
@@ -282,32 +284,43 @@ nav ul li a.hover {
     /****#POPULAR STYLES*******/
     #popular {
         width: 60%;
-        display: flex;
-        flex-wrap: wrap;
     }
 
     #popular img {
         content: url(images/image-web-3-desktop.jpg);
     }
 
+    #popular .text {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
     #popular h1 {
-        width: calc(50% - 30px);
-        padding: 30px 30px 30px 0;
+        padding-top: 30px;
+        width: 50%;
     }
 
     #popular p {
+        padding: 30px 0 0 30px;
         width: calc(50% - 30px);
-        padding: 30px 0 30px 30px;
     }
 
     #popular button {
-        margin: 40px 0;
+        margin-top: 40px;
     }
 
     /******#NEW STYLES*****/
     #new {
-        width: 30%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         margin: 0 0 0 20px;
+        width: 30%;
+    }
+
+    .new-story {
+        padding: 0;
     }
 
 
@@ -315,10 +328,24 @@ nav ul li a.hover {
     #trending {
         display: flex;
         flex-wrap: nowrap;
+        justify-content: space-between;
     }
 
     .trend-story {
-        margin: 15px;
+        align-items: flex-start;
+        width: 33%;
+    }
+
+    .trend-story figure {
+        padding: 0 20px 0 0;
+    }
+
+    .trend-story .text {
+        padding: 0;
+    }
+
+    .story-2 {
+        margin: 0 30px;
     }
 
 }
